@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<h1>XRays Uploaded </h1>
+	<div class="prescriptions">
+		{% for x in xray %}
+			{% if user.is_authenticated %}
+				{% if request.user == x.username %}
+					<div class ="card hoverable">
+						<div class="card-content">
+							<i class="medium material-icons">content_paste</i>
+							<div class="prescription">
+								{% if user.is_patient %}
+									<h3>XRay By Doctor:  {{x.name}}</h3>
+								{% else %}
+									<h3>XRay For Patient:  {{x.name}}</h3>
+								{% endif %}
+								<div>
+									<img src="{{x.image.url}}" width=224 height=224>
+								</div>
+								<div>
+									<h3 style="color:black;">This is the prediction</h3>
+									<h3 style="color:black;">{{x.predictions}}</h3>
+								</div>
+								<div>
+									<!-- <h1>Delete XRay</h1> -->
+								<a href="{% url 'prescription:xray_delete' x.pk %}"><button class="btn-large">Delete XRay</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		{% for x in xray %}
+			{% if user.is_authenticated %}
+				{% if request.user.username == x.name %}
+					<div class ="card hoverable">
+						<div class="card-content">
+							<i class="medium material-icons">content_paste</i>
+							<div class="prescription">
+								{% if user.is_patient %}
+									<h3>XRay By Doctor:  {{x.username}}</h3>
+								{% else %}
+									<h3>XRay For Patient:  {{x.username}}</h3>
+								{% endif %}
+								<div>
+									<img src="{{x.image.url}}" width=224 height=224>
+								</div>
+								<div style="color:black;">
+									<h3 style="color:black;">This is the prediction</h3>
+									<h3 style="color:black!important;">{{x.predictions}}</h3>
+								</div>
+							</div>
+							<!-- <h1>Delete XRay</h1> -->
+								<a href="{% url 'prescription:xray_delete' x.pk %}"><button class="btn-large">Delete XRay</button></a>
+						</div>
+					</div>
+					<br>
+					<br>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	</div>
+	<h1>Upload new XRay</h1>
+		<a href="{% url 'prescription:xray'%}"><button class="btn-large">Upload XRay</button></a>
+	<h1>Upload new Prescription</h1>
+		<a href="{% url 'prescription:upload'%}"><button class="btn-large">Upload Prescription</button></a>
+	<h1>View Previous Prescriptions</h1>
+		<a href="{% url 'prescription:list' %}"><button class="btn-large">Uploaded Prescriptions</button></a>
+		
+{% endblock %}
