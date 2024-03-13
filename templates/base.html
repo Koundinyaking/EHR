@@ -31,8 +31,8 @@
           <li><a href="{% url 'prescription:list' %}">{{ user.username }}</a></li>
           <li><a href="{% url 'logout' %}">Logout</a></li>
           {% else %}
-          <li><a href="{% url 'signup' %}">Sign Up</a></li>
-          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}" class="btn btn-primary" style="border-radius: 30px;">Sign Up</a></li>
+          <li><a href="{% url 'login' %}" class="btn btn-primary" style="border-radius: 30px;">Login</a></li>
           {% endif %}
         </ul>
       </div>

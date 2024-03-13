@@ -14,14 +14,14 @@
 						<p>Enter the Patient Name In the last field</p>
 						{% endif %}
 						{{form|crispy}}
-						<input type="submit" class="btn-large" value="Upload XRay">
+						<input type="submit" class="btn-large" style="border-radius: 20px;"value="Upload XRay">
 					</form>
 				</div>
 				<br>
 				<div class="back">
 					<form class="back_form" action="{% url 'prescription:xray_list'  %}" method="post">
 						{% csrf_token %}
-						<input type="submit" class="btn-large" value="Go Back">
+						<input type="submit" class="btn-large" style="border-radius: 20px;" value="Go Back">
 					</form>
 				</div>
 			</div>

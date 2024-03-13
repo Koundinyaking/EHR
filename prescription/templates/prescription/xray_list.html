@@ -24,7 +24,7 @@
 								</div>
 								<div>
 									<!-- <h1>Delete XRay</h1> -->
-								<a href="{% url 'prescription:xray_delete' x.pk %}"><button class="btn-large">Delete XRay</button></a>
+								<a href="{% url 'prescription:xray_delete' x.pk %}"><button class="btn-large" style="border-radius: 20px;">Delete XRay</button></a>
 								</div>
 							</div>
 						</div>
@@ -55,7 +55,7 @@
 								</div>
 							</div>
 							<!-- <h1>Delete XRay</h1> -->
-								<a href="{% url 'prescription:xray_delete' x.pk %}"><button class="btn-large">Delete XRay</button></a>
+								<a href="{% url 'prescription:xray_delete' x.pk %}"><button class="btn-large" style="border-radius: 20px;">Delete XRay</button></a>
 						</div>
 					</div>
 					<br>
@@ -65,10 +65,10 @@
 		{% endfor %}
 	</div>
 	<h1>Upload new XRay</h1>
-		<a href="{% url 'prescription:xray'%}"><button class="btn-large">Upload XRay</button></a>
+		<a href="{% url 'prescription:xray'%}"><button class="btn-large" style="border-radius: 20px;">Upload XRay</button></a>
 	<h1>Upload new Prescription</h1>
-		<a href="{% url 'prescription:upload'%}"><button class="btn-large">Upload Prescription</button></a>
+		<a href="{% url 'prescription:upload'%}"><button class="btn-large" style="border-radius: 20px;">Upload Prescription</button></a>
 	<h1>View Previous Prescriptions</h1>
-		<a href="{% url 'prescription:list' %}"><button class="btn-large">Uploaded Prescriptions</button></a>
+		<a href="{% url 'prescription:list' %}"><button class="btn-large" style="border-radius: 20px;">Uploaded Prescriptions</button></a>
 		
 {% endblock %}

@@ -17,15 +17,15 @@
 							<h3>Prescribed For Patient:  {{prescription.name}}</h3>
 						{% endif %}
 						<!-- <p><a class ="download" href="{{prescription.image.url}}" class="btn btn-primary btn-sm">Download {{prescription.image}}</a></p> -->
-						<a href="{% url 'prescription:download' prescription.pk %}"><button class="btn-large">Download</button></a>
-						<a href="{% url 'prescription:view' prescription.pk %}"><button class="btn-large">View</button></a>
-						<button class="btn-large copy-btn" data-pk="{{ prescription.pk }}">Copy Unique Key</button>
+						<a href="{% url 'prescription:download' prescription.pk %}"><button class="btn-large" style="border-radius: 20px;">Download</button></a>
+						<a href="{% url 'prescription:view' prescription.pk %}"><button class="btn-large" style="border-radius: 20px;">View</button></a>
+						<button class="btn-large copy-btn" style="border-radius: 20px;"data-pk="{{ prescription.pk }}">Copy Unique Key</button>
 						<br>
 						<br>
 						<div class="delete">
 							<form class="delete_form" action="{% url 'prescription:delete' prescription.pk %}" method="post">
 								{% csrf_token %}
-								<input type="submit" class="btn-large" value="Delete">
+								<input type="submit" class="btn-large" style="border-radius: 20px;" value="Delete">
 							</form>
 						</div>
 					</div>
@@ -40,16 +40,16 @@
 	<!-- <h1>XRays Uploaded </h1> -->
 	<!-- <h1>Upload new XRay</h1> -->
 	<h1>Upload new Prescription</h1>
-		<a href="{% url 'prescription:upload'%}"><button class=" btn-large">Upload Prescriptions</button></a>
+		<a href="{% url 'prescription:upload'%}"><button class=" btn-large" style="border-radius: 20px;">Upload Prescriptions</button></a>
 	<h1>Upload new XRay</h1>
-		<a href="{% url 'prescription:xray'%}"><button class="btn-large">Upload XRay</button></a>
+		<a href="{% url 'prescription:xray'%}"><button class="btn-large" style="border-radius: 20px;">Upload XRay</button></a>
 	<h1>View Previous XRay's</h1>
-		<a href="{% url 'prescription:xray_list' %}"><button class="btn-large">Uploaded XRay's</button></a>
+		<a href="{% url 'prescription:xray_list' %}"><button class="btn-large" style="border-radius: 20px;">Uploaded XRay's</button></a>
 	<h1>Access a Prescription</h1>
 	<form action="/record/doctor_view/" method="POST">
 		{% csrf_token %}
 		<input type="text" class="input" style="color:#fff" name="pk" />
-		<button type="submit" class="btn-large">Access</button>
+		<button type="submit" class="btn-large" style="border-radius: 20px;">Access</button>
 	</form>
 	<script>
 		  let copyBtns = document.querySelectorAll('.copy-btn');

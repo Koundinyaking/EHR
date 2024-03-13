@@ -17,7 +17,7 @@
 		{% endif %}
 	</div>
 	<div>
-		<input type="submit" class="btn-large" value="Submit"></input>
+		<input type="submit" class="btn-large" style="border-radius: 20px;"value="Submit"></input>
 	</div>
 </form>	
 <!-- <form method="POST" action="{url 'prescription:goback_delete' prescriptions.pk %}">
@@ -28,7 +28,7 @@
 <div class="back">
 	<form class="back_form" action="{% url 'prescription:list'  %}" method="post">
 		{% csrf_token %}
-		<input type="submit" class="btn-large pulse" value="Go Back">
+		<input type="submit" class="btn-large pulse" style="border-radius: 20px;"value="Go Back">
 	</form>
 </div>
 {% endblock %}
