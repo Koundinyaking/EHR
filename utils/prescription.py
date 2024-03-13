@@ -64,6 +64,7 @@ class Prescription():
 
 	def view(self ,request ,pk):
 		instance = Prescriptions.objects.get(pk=pk)
+		print(instance)
 		text = instance.text
 		web3 = Web3()
 		hashed_data = web3.keccak(text=text).hex()

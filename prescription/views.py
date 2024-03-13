@@ -119,6 +119,19 @@ def view(request,pk):
 		return render(request , 'prescription/prescription_view.html' , {'prescription':instance})
 	else:
 		return HttpResponse("<h1>Hash does not exist in blockchain</h1>")	
+	
+
+@login_required
+def doctor_view(request):
+	if request.method=="POST":
+		trial = prescription.Prescription()
+		print(trial)
+		pk = request.POST["pk"]
+		(exists , instance) = trial.view(request,pk)
+		if exists:
+			return render(request , 'prescription/prescription_view.html' , {'prescription':instance})
+		else:
+			return HttpResponse("<h1>Hash does not exist in blockchain</h1>")	
 
 @login_required
 def xray(request):

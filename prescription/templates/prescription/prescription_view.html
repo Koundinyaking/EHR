@@ -4,6 +4,12 @@
 	<br>
 	<br>
 	<div>
+		<h2 style="color:rgb(239, 236, 236)">Prescription Name:  {{prescription.record}}</h2>
+						{% if user.is_patient %}
+							<h3 style="color:rgb(239, 236, 236)">Prescribed By Doctor:  {{prescription.username}}</h3>
+						{% else %}
+							<h3 style="color:rgb(239, 236, 236)">Prescribed For Patient:  {{prescription.username}}</h3>
+						{% endif %}
 		<img class='image'src="{{prescription.image.url}}" style="padding:1px;border:thick solid red;" >
 	</div>
 	<br>
